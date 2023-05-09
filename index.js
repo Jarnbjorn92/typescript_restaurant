@@ -13,7 +13,7 @@ var filteredRestaurants = restaurants_1.default.filter(function (restaurant) {
     if (restaurant.deliveryTimeMinutes > Number(deliveryTimeMax)) {
         return false;
     }
-    if (restaurant.distance > maxDistance) {
+    if (Number(restaurant.distance) > maxDistance) {
         return false;
     }
     return restaurant;
