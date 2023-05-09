@@ -4,6 +4,7 @@ const dollarSigns = '$$';
 const deliveryTimeMax = '90';
 const maxDistance = 10;
 let result;
+const hour = new Date().getHours()
 
 const priceBracket: number = dollarSigns.length;
 
@@ -18,6 +19,10 @@ const filteredRestaurants = restaurants.filter((restaurant) => {
 
     if (Number(restaurant.distance) > maxDistance) {
         return false;
+    }
+
+    if (Number(restaurant.openHour) < hour && Number(restaurant.closeHour) > hour){
+        return false
     }
 
     return restaurant;
